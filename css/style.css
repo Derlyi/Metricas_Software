@@ -1,0 +1,207 @@
+/* General*/
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*menu - logo*/
+  
+.header {
+    display: flex; /* Usa el modelo de caja flexible para el header */
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px 20px; /* Añade relleno al header */
+    background-color: #fff; /* Color de fondo del header */
+    color: black; /* Color de texto del header */
+}
+  
+.logo {
+    display: flex; /* Usa el modelo de caja flexible para el logo y texto */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-direction: column; /* Cambiar la dirección a columna */
+}
+  
+.logo img {
+    height: 80px; /* Establece la altura del logo */
+    margin-right: 10px; /* Añade margen a la derecha del logo */
+    margin-bottom: 5px; /* Añadir margen inferior al logo */
+}
+
+.logo-text {
+    font-size: 12px; /* Tamaño de letra más pequeño */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+}
+  
+.menu ul {
+    list-style-type: none; /* Elimina los estilos de viñetas de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+    padding: 0; /* Elimina el relleno de la lista */
+}
+  
+.menu ul li {
+    display: inline; /* Muestra los elementos de la lista en línea */
+    margin-right: 25px; /* Añade margen a la derecha de cada elemento */
+}
+  
+.menu ul li a {
+    color: black; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 13px; 
+    font-weight: bold;
+    text-align: center;
+
+}
+
+/* Hamburger menu */
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px; 
+    font-weight: bold;
+    text-align: center;
+}
+
+.abrir-menu,
+.cerrar-menu {
+        display: none;
+}
+
+
+/* Línea divisora */
+  
+.divider {
+    height: 1px; /* Establece la altura de la línea divisoria */
+    background-color: grey; /* Color de fondo de la línea divisoria */
+    margin: 0 auto; /* Añade margen automático a los lados para centrar horizontalmente */
+    width: 95%; /* Establece el ancho de la línea divisora */
+
+}
+
+/* Cuadros con la información */
+  
+.contenedor {
+    display: flex;
+    flex-wrap: wrap; /*se aplica al contenedor para asegurarse de se envuelvan en múltiples líneas si el espacio horizontal disponible no es suficiente */
+    justify-content: center;
+    
+}
+  
+.cuadro {
+    width: 250px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*se agrega un efecto sombra en los bordes del cuadro*/
+    overflow: hidden; /*esta propiedad sirve para asegurarse de que cualquier contenido que sobresalga del contenedor no se muestre fuera de los límites del contenedor y se recorte de manera limpia y ordenada*/
+    margin-bottom: 70px;
+}
+  
+.cuadro img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+  
+.descripcion {
+    padding: 10px;
+}
+  
+.descripcion h2 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+}
+  
+.descripcion p {
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.volver {
+    color: black; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    text-align: center;
+}
+
+/* Media Queries */
+
+@media (max-width: 1000px) {
+    .cuadro {
+      width: 40%;
+    }
+    
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .abrir-menu {
+        color: #1c1c1c;
+    }
+
+    .cerrar-menu {
+        color: #ececec;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end; /*Se pone para alinear el boton cerrar hacia la derecha*/
+        gap: 1rem; /*Separa el boton cerrar de la lista*/
+        position:absolute;
+        top: 0;
+        right: 0;  
+        bottom: 0;
+        background-color: #1c1c1c;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5); /*le da opacidad cuando se abre el menu*/
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: end; /*se pone la lista en forma de columa y se alinean hacia la derecha*/
+    }
+
+    .nav-list li a{
+        color: #ececec;
+    }
+}  
